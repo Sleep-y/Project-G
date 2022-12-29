@@ -89,6 +89,9 @@ class Game {
         if(this.player.defeated) {
             this.ui.drawDefeat(context)
         }
+        if(gameOn == 2){
+            this.ui.drawPause(context)
+        }
     }
     spawnEnemy(){
         this.randomPick = (Math.random()*100)
@@ -203,11 +206,12 @@ class UI {
         context.fillText("Game Over", this.game.width / 2 -80, this.game.height / 2+15)
         context.fillText("Press Spacebar to restart", this.game.width / 2 -170, this.game.height / 2+50)
     }
-    drawPause(){
+    drawPause(context){
+        console.log("Drawing Pause")
         context.fillStyle = "black"
-        context.fillRect(0, this.game.height / 2 - 40, this.game.width, 120)
+        context.fillRect(0, this.game.height / 2 - 20, this.game.width, 40)
         context.fillStyle = this.color
-        context.fillText("Paused", this.game.width / 2 -80, this.game.height / 2+15)
+        context.fillText("Paused", this.game.width / 2 -60, this.game.height / 2+10)
     }
 }
 
@@ -522,6 +526,8 @@ function mouseMove(event){
 
 
 const gameInstance = new Game(canvas.width, canvas.height)
+
+
 function main(){
     
     //console.log("Drawing...")
