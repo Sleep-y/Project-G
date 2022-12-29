@@ -521,13 +521,6 @@ function mouseMove(event){
 }
 
 
-//canvas.addEventListener("mousemove", mouseMove, false)
-
-function newGame(){
-
-}
-
-
 const gameInstance = new Game(canvas.width, canvas.height)
 function main(){
     
@@ -546,7 +539,6 @@ function main(){
         {
             gameInstance.newGame();   
         }
-        console.log(e)
     })
 
     if(gameOn == 1){
